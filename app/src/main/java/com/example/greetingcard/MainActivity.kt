@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,6 +18,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,67 +31,65 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             GreetingCardTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    Card(
                         name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier
                     )
-                }
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Column(modifier= modifier.fillMaxWidth().fillMaxHeight(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
-        Column(){
-            Text(
-                text = "FOTO",
-                fontSize = 50.sp,
-                modifier = modifier.align(alignment = Alignment.CenterHorizontally)
+fun Card(name: String, modifier: Modifier = Modifier) {
+    Column(modifier= modifier.fillMaxWidth().fillMaxHeight(), verticalArrangement = Arrangement.Bottom, horizontalAlignment = Alignment.CenterHorizontally){
+        Column(modifier=modifier.fillMaxWidth().padding(horizontal=10.dp,vertical=100.dp)){
+            Image(
+                painter = painterResource(R.drawable.face),
+                "Foto",
+                modifier = modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)
             )
 
             Text(
                 text = "Iván Marín Benítez",
                 fontSize = 40.sp,
-                modifier = modifier.align(alignment = Alignment.CenterHorizontally)
+                modifier = modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)
             )
             Text(
                 text = "Minecraft expert",
-                modifier = modifier.align(alignment = Alignment.CenterHorizontally)
+                modifier = modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)
             )
         }
-        Column()
+        Column(modifier=modifier.fillMaxWidth().padding(horizontal = 10.dp, vertical = 30.dp))
         {
-            Row(){
+            Row(modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)){
                 Text(
                     text="foto",
-                    modifier = modifier
+                    modifier = modifier.padding(horizontal = 10.dp)
                 )
                 Text(
                     text="numero telefono",
-                    modifier = modifier
+                    modifier = modifier.padding(horizontal = 10.dp)
                 )
             }
-            Row(){
+            Row(modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)){
                 Text(
                     text="foto",
-                    modifier = modifier
+                    modifier = modifier.padding(horizontal = 10.dp)
                 )
                 Text(
                     text="social media",
-                    modifier = modifier
+                    modifier = modifier.padding(horizontal = 10.dp)
                 )
             }
-            Row(){
+            Row(modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)){
                 Text(
                     text="foto",
-                    modifier = modifier
+                    modifier = modifier.padding(horizontal = 10.dp)
                 )
                 Text(
                     text="dirección gmail",
-                    modifier = modifier
+                    modifier = modifier.padding(horizontal = 10.dp)
                 )
             }
         }
@@ -98,6 +100,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     GreetingCardTheme {
-        Greeting("Android")
+        Card("Android")
     }
 }
