@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -51,44 +52,44 @@ fun Card(name: String, modifier: Modifier = Modifier) {
             )
 
             Text(
-                text = "Iván Marín Benítez",
+                text = "Iván Marín Benítez", color=Color.Blue,
                 fontSize = 40.sp,
                 modifier = modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)
             )
             Text(
-                text = "Minecraft expert",
+                text = "Minecraft expert", color = Color.Magenta,
                 modifier = modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)
             )
         }
-        Column(modifier=modifier.fillMaxWidth().padding(horizontal = 10.dp, vertical = 30.dp))
+        Column(modifier=modifier.padding(horizontal = 10.dp, vertical = 30.dp),horizontalAlignment = Alignment.CenterHorizontally)
         {
-            Row(modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)){
+            Row(modifier.align(alignment = Alignment.Start).padding(10.dp)){
                 Text(
-                    text="foto",
+                    text="Telefono: ",
                     modifier = modifier.padding(horizontal = 10.dp)
                 )
                 Text(
-                    text="numero telefono",
-                    modifier = modifier.padding(horizontal = 10.dp)
-                )
-            }
-            Row(modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)){
-                Text(
-                    text="foto",
-                    modifier = modifier.padding(horizontal = 10.dp)
-                )
-                Text(
-                    text="social media",
+                    text="611494747",
                     modifier = modifier.padding(horizontal = 10.dp)
                 )
             }
-            Row(modifier.align(alignment = Alignment.CenterHorizontally).padding(10.dp)){
+            Row(modifier.align(alignment = Alignment.Start).padding(10.dp)){
                 Text(
-                    text="foto",
+                    text="Social:",
                     modifier = modifier.padding(horizontal = 10.dp)
                 )
                 Text(
-                    text="dirección gmail",
+                    text="Xxivanmaringamer777",
+                    modifier = modifier.padding(horizontal = 10.dp)
+                )
+            }
+            Row(modifier.align(alignment = Alignment.Start).padding(10.dp)){
+                Text(
+                    text="gmail",
+                    modifier = modifier.padding(horizontal = 10.dp)
+                )
+                Text(
+                    text="ivanmarinclase@gmail.com",
                     modifier = modifier.padding(horizontal = 10.dp)
                 )
             }
